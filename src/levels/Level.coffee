@@ -23,7 +23,7 @@ class Level
 
   checkForWin: (player, goal) ->
       if goal.won(player.y, player.x)
-        sound.play "particle"
+        sound.play "secosmic_lo"
         @game.levelComplete()
         true
       else
