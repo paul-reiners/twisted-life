@@ -36,7 +36,10 @@
       @dialog.update()
     else
       gfx.clear()
-      @screen.updateAndRender(gfx)
+      if @screen.constructor is TitleScreen
+        @screen.updateAndRender()
+      else
+        @screen.updateAndRender(gfx)
 
   render: ->
     gfx.clear()

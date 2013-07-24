@@ -1,7 +1,7 @@
 class TitleScreen extends Screen
   min: 20
 
-  updateAndRender: (gfx) ->
+  updateAndRender: () ->
     return if @min-- > 0
     game.screen = new GameScreen() if keys.space
 
