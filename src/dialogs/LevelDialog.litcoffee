@@ -1,3 +1,6 @@
+LevelDialog Class
+=================
+
     class LevelDialog extends Dialog
       constructor: (@levelName, @numLives, @roundScore, @gameScore) ->
         keys.reset()
@@ -23,6 +26,8 @@
           livesText = "1 life left."
         else
           livesText = "#{@numLives} lives left."
+<a id="stringInterpolation"></a>Some examples of String interpolation:
+
         text =
           ["#{@levelName}.", livesText, "Previous round score: #{@roundScore}",
            "Game score: #{@gameScore}", "", "Press space to start level..."]
