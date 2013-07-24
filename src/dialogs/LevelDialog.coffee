@@ -1,6 +1,6 @@
 class LevelDialog extends Dialog
   time: 50
-  constructor: (@levelName, @numLives, @roundScore) ->
+  constructor: (@levelName, @numLives, @roundScore, @gameScore) ->
   update: ->
     if --@time == 0
       game.dialog = null
@@ -13,7 +13,8 @@ class LevelDialog extends Dialog
     c.fillRect 0, 0, 350, 200
 
     c.fillStyle = "#e0e0e0"
-    c.fillText "#{@levelName}.", 50, 80
-    c.fillText "#{@numLives} lives left.", 50, 100
-    c.fillText "Previous round score: #{@roundScore}", 50, 120
+    c.fillText "#{@levelName}.", 50, 70
+    c.fillText "#{@numLives} lives left.", 50, 90
+    c.fillText "Previous round score: #{@roundScore}", 50, 110
+    c.fillText "Game score: #{@gameScore}", 50, 130
     c.restore()

@@ -38,7 +38,7 @@ class GameScreen extends Screen
     [playerX, playerY] = @level.getRandomDeadCell()
     diameter = 2 * @radius + 1
     @player = new Player playerX, playerY, @size, diameter
-    game.dialog = new LevelDialog(@level.name, @numLives, @prevRoundScore)
+    game.dialog = new LevelDialog(@level.name, @numLives, @prevRoundScore, @gameScore)
 
   levelComplete: ->
     @levelNumber++
