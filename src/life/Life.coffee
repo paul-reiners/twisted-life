@@ -1,14 +1,13 @@
 class Life
-  constructor: (@radius, @size, sparseness) ->
+  constructor: (@radius, @size, density) ->
     # Random universe
-    rand = utils.rand
     diameter = 2 * @radius + 1
     @count = 0
     @universe = (
-      for y in [0 ... diameter]
-        for x in [0 ... diameter]
-          r = rand sparseness
-          if r is 0
+      for [0 ... diameter]
+        for [0 ... diameter]
+          r = Math.random()
+          if r <= density
             @count++
             1
           else

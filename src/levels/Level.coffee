@@ -1,5 +1,5 @@
 class Level
-  constructor: (@level, @game) ->
+  constructor: (@level, @game, @density) ->
     @createUniverse()
     @name = "Level " + level
 
@@ -26,9 +26,7 @@ class Level
     @goal.render gfx
 
   createUniverse: ->
-    sparseness = 8
-
-    @life = new Life @game.radius, @game.size, sparseness
+    @life = new Life @game.radius, @game.size, @density
     center = @game.radius + 1
     @goal = new Goal center, center, @game.size
 

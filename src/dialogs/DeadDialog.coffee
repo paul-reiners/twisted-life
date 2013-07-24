@@ -1,5 +1,8 @@
 class DeadDialog extends Dialog
   time: 100
+
+  constructor: (@gameScore) ->
+
   update: ->
     game.reset() if --@time == 0
             
@@ -11,6 +14,7 @@ class DeadDialog extends Dialog
     c.fillRect 0, 0, 350, 200
 
     c.fillStyle = "#e0e0e0"
-    c.fillText "Twisted Life has killed you!", 50, 100
+    c.fillText "You're dead, buddy!", 50, 100
+    c.fillText "Game score: #{@gameScore}", 50, 120
     c.restore()
 
