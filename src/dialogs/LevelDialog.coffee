@@ -1,5 +1,4 @@
 class LevelDialog extends Dialog
-  time: 50
   constructor: (@levelName, @numLives, @roundScore, @gameScore) ->
     keys.reset()
 

@@ -1,10 +1,8 @@
 class DeadDialog extends Dialog
-  time: 100
-
   constructor: (@gameScore) ->
 
   update: ->
-    game.reset() if --@time == 0
+    game.reset() if keys.space
             
   render: (gfx) ->
     c = gfx.ctx
@@ -14,7 +12,15 @@ class DeadDialog extends Dialog
     c.fillRect 0, 0, 350, 200
 
     c.fillStyle = "#e0e0e0"
-    c.fillText "You're dead, buddy!", 50, 100
-    c.fillText "Game score: #{@gameScore}", 50, 120
+
+    left = 10
+    yCoord = 70
+    vertSpace = 20
+    text =
+      ["You're dead, buddy!", "Game score: #{@gameScore}", "", "Press space for a new game..."]
+    for line in text
+      c.fillText line, left, yCoord
+      yCoord += vertSpace
+
     c.restore()
 
