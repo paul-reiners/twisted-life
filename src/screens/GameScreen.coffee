@@ -32,7 +32,7 @@ class GameScreen extends Screen
     @gameScore = @gameScore + @roundScore
     @roundScore = 1000
     @numLives--
-    if @numLives is 0
+    if @numLives <= 0
       game.dialog = new DeadDialog()
     else
       if @levelNumber > 0
