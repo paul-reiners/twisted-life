@@ -15,5 +15,5 @@ class LevelDialog extends Dialog
     c.fillStyle = "#e0e0e0"
     c.fillText "#{@levelName}.", 50, 80
     c.fillText "#{@numLives} lives left.", 50, 100
-    c.fillText "Round score: #{@roundScore}", 50, 120
+    c.fillText "Previous round score: #{@roundScore}", 50, 120
     c.restore()

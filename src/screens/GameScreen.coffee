@@ -7,7 +7,8 @@ class GameScreen extends Screen
   size: 8
   radius: 32
   numLives: 4
-  roundScore: 1000
+  roundScore: 0
+  prevRoundScore: @roundScore
   gameScore: 0
   density: this.STARTING_DENSITY
 
@@ -31,20 +32,22 @@ class GameScreen extends Screen
     @roundScore = Math.round(@roundScore * GameScreen.DECAY)
 
   startLevel: ->
+    @prevRoundScore = @roundScore
+    @roundScore = 1000
     @level = new Level @levelNumber, @, @density
     [playerX, playerY] = @level.getRandomDeadCell()
     diameter = 2 * @radius + 1
     @player = new Player playerX, playerY, @size, diameter
-    game.dialog = new LevelDialog(@level.name, @numLives, @roundScore)
+    game.dialog = new LevelDialog(@level.name, @numLives, @prevRoundScore)
 
   levelComplete: ->
     @levelNumber++
     @density = (63 * @density + GameScreen.MAX_DENSITY) / 64
+    @gameScore = @gameScore + @roundScore
     @startLevel()
 
   lifeLost: ->
-    @gameScore = @gameScore + @roundScore
-    @roundScore = 1000
+    @roundScore = 0
     @numLives--
     if @numLives <= 0
       game.dialog = new DeadDialog(@gameScore)
