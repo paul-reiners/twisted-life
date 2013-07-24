@@ -1,18 +1,18 @@
 C:
 cd C:\Users\vreinpa\Dropbox\twisted-life\twisted-life-module\src
-coffee -j ../script/main.js -w -c^
-      _utils.coffee^
-      gfx.coffee^
-      keys.coffee^
-      sound.coffee^
-      ./dialogs/_Dialog.coffee^
-      ./dialogs/LevelDialog.coffee^
-      ./dialogs/DeadDialog.coffee^
-      ./screens/_Screen.coffee^
-      ./screens/GameScreen.coffee^
-      ./screens/TitleScreen.coffee^
-      ./life/Life.coffee^
-      ./player/Player.coffee^
-      ./goal/Goal.coffee^
-      ./levels/Level.coffee^
-      game.coffee
+coffee -j ../script/main.js -w -c -l^
+      _utils.litcoffee^
+      gfx.litcoffee^
+      keys.litcoffee^
+      sound.litcoffee^
+      ./dialogs/_Dialog.litcoffee^
+      ./dialogs/LevelDialog.litcoffee^
+      ./dialogs/DeadDialog.litcoffee^
+      ./screens/_Screen.litcoffee^
+      ./screens/GameScreen.litcoffee^
+      ./screens/TitleScreen.litcoffee^
+      ./life/Life.litcoffee^
+      ./player/Player.litcoffee^
+      ./goal/Goal.litcoffee^
+      ./levels/Level.litcoffee^
+      game.litcoffee
