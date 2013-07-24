@@ -22,7 +22,9 @@ class GameScreen extends Screen
     # 2. Render
     @render(gfx)
     # 3. Check for goal or collision
-    @level.check()
+    result = @level.check()
+    if result
+      return
     # 4. Update Life
     @level.update()
     # 5. Render
@@ -49,7 +51,7 @@ class GameScreen extends Screen
   lifeLost: ->
     @roundScore = 0
     @numLives--
-    if @numLives <= 0
+    if @numLives is 0
       game.dialog = new DeadDialog(@gameScore)
     else
       if @levelNumber > 0

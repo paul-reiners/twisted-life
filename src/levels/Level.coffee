@@ -8,18 +8,26 @@ class Level
     @check()
 
   check: ->
-    @checkForWin @game.player, @goal
-    @checkCollision @game.player, @life
+    result = @checkForWin @game.player, @goal
+    unless result
+      result = @checkCollision @game.player, @life
+    result
 
   checkCollision: (player, life) ->
       if life.isAlive(player.y, player.x)
         sound.play "boom"
         @game.lifeLost()
+        true
+      else
+        false
 
   checkForWin: (player, goal) ->
       if goal.won(player.y, player.x)
         sound.play "particle"
         @game.levelComplete()
+        true
+      else
+        false
 
   render: ->
     @life.render gfx
