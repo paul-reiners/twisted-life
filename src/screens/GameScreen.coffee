@@ -51,7 +51,7 @@ class GameScreen extends Screen
   lifeLost: ->
     @roundScore = 0
     @numLives--
-    if @numLives is 0
+    if @numLives <= 0
       game.dialog = new DeadDialog(@gameScore)
     else
       if @levelNumber > 0

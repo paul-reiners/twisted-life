@@ -16,5 +16,8 @@ keys =
       when 40 then @down = isDown
       when 32 then @space = isDown
 
+  start: ->
+    @left or @right or @up or @down
+
 $(document).keydown (e) -> keys.trigger e.keyCode, true
 $(document).keyup (e) -> keys.trigger e.keyCode, false

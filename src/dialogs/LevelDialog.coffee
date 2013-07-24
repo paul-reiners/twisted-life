@@ -1,8 +1,11 @@
 class LevelDialog extends Dialog
   time: 50
   constructor: (@levelName, @numLives, @roundScore, @gameScore) ->
+    keys.reset()
+
   update: ->
-    if --@time == 0
+    if keys.space
+      keys.reset()
       game.dialog = null
 
   render: (gfx) ->
