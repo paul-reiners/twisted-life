@@ -35,7 +35,8 @@
     if @dialog?
       @dialog.update()
     else
-      @screen.update()
+      gfx.clear()
+      @screen.updateAndRender(gfx)
 
   render: ->
     gfx.clear()

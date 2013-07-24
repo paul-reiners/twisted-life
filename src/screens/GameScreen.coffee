@@ -10,10 +10,19 @@ class GameScreen extends Screen
   constructor: ->
     @startLevel()
 
-  update: ->
+  updateAndRender: (gfx) ->
     # Update level, player, and check collisions
-    @level.update()
+    # 1. Update player
     @player.update()
+    # 2. Render
+    @render(gfx)
+    # 3. Check for goal or collision
+    @level.check()
+    # 4. Update Life
+    @level.update()
+    # 5. Render
+    @render(gfx)
+    # 3. Check for goal or collision
     @level.check()
     @roundScore = Math.round(@roundScore * GameScreen.DECAY)
 

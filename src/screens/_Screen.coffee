@@ -1,5 +1,5 @@
 class Screen
   constructor: ->
-  update: ->
+  updateAndRender: (gfx) ->
   render: (gfx) ->     
 
