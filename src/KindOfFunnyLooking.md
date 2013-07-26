@@ -1,9 +1,9 @@
-<link href="docscss" rel="stylesheet"></link>
+<link href="docs.css" rel="stylesheet"></link>
 
 Kind of Funny Looking
 =====================
 <!-- width="225" height="39" -->
-Steve Buscemi, JavaScript, and <a id="logo" href="#top"><img src="./img/logo.png" width="169" height="29" alt="CoffeeScript" /></a>
+Steve Buscemi, JavaScript, and <img src="./img/logo.png" width="169" height="29" alt="CoffeeScript" />
 -------------------------------------------
 
 Version 0.0.1 - Thu 18 Jul 2013
@@ -71,3 +71,9 @@ literate programming by embedding your code in Markdown files.
 
 What other language do you know of that lets you display a picture of Brigitte Bardot inline?
 ![Brigitte Bardot](./img/brigitte.jpg)
+
+References
+----------
+
+* <i>Jump Start CoffeeScript </i>by Earle Castledine
+* <i>The Little Book on CoffeeScript </i> by Alex MacCaw
