@@ -1,3 +1,5 @@
+    "use strict"
+
     @game =
       dialog: null
       screen: null
