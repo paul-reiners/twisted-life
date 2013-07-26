@@ -115,7 +115,8 @@ What other language do you know of that lets you [display a picture of Brigitte 
 References
 ----------
 
+* [CoffeeScript](http://coffeescript.org/)
+* ["Should You Learn CoffeeScript?"](http://net.tutsplus.com/articles/interviews/should-you-learn-coffeescript/) by Jeffrey Way
 * <i>Jump Start CoffeeScript </i>by Earle Castledine
 * <i>The Little Book on CoffeeScript </i> by Alex MacCaw
 * [DotJS. Symbiotic Languages](http://ashkenas.com/dotjs/)
-* ["Should You Learn CoffeeScript?"](http://net.tutsplus.com/articles/interviews/should-you-learn-coffeescript/) by Jeffrey Way
