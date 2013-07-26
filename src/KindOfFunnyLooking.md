@@ -77,3 +77,4 @@ References
 
 * <i>Jump Start CoffeeScript </i>by Earle Castledine
 * <i>The Little Book on CoffeeScript </i> by Alex MacCaw
+* [DotJS. Symbiotic Languages](http://ashkenas.com/dotjs/)
