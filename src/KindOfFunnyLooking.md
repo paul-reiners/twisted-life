@@ -110,8 +110,7 @@ One last shallow observation on the shallowness (or 'shallowness'?) of good look
 This whole presentation is executable CoffeeScript.  You see, CoffeeScript allows
 literate programming by embedding your code in Markdown files.
 
-What other language do you know of that lets you display a picture of Brigitte Bardot inline?
-![Brigitte Bardot](./img/brigitte.jpg)
+What other language do you know of that lets you [display a picture of Brigitte Bardot inline](./game.html#brigitte)?
 
 References
 ----------

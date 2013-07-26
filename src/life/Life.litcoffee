@@ -1,3 +1,8 @@
+<link href="../docs.css" rel="stylesheet"></link>
+![John Horton Conway](../img/250px-John_H_Conway_2005.jpg)
+
+<a id="classKeyword"></a>An example of using the class keyword:
+
     class Life
       constructor: (@radius, @size, density) ->
         # Random universe

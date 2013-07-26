@@ -1,3 +1,4 @@
+<link href="../docs.css" rel="stylesheet"></link>
 LevelDialog Class
 =================
 
