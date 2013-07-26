@@ -27,59 +27,20 @@ is "Lisp in C's clothing":
 
 However, like Steve Buscemi, JavaScript is kind of funny looking.
 
-    Life.prototype.isAlive = function(x, y) {
-      var dx, dy, liveNeighbors, neighborX, neighborY, _i, _j;
-      liveNeighbors = 0;
-      for (dy = _i = -1; _i <= 1; dy = ++_i) {
-        for (dx = _j = -1; _j <= 1; dx = ++_j) {
-          neighborY = (y + dy + this.sideLen) % this.sideLen;
-          neighborX = (x + dx + this.sideLen) % this.sideLen;
-          if ((dy !== 0 || dx !== 0) && this.universe[neighborY][neighborX] === 1) {
-            liveNeighbors++;
-          }
-        }
-      }
-      if (this.universe[y][x] === 1) {
-        if (liveNeighbors < 2) {
-          return 0;
-        } else if (liveNeighbors === 2 || liveNeighbors === 3) {
-          return 1;
-        } else {
-          return 0;
-        }
-      } else {
-        if (liveNeighbors === 3) {
-          return 1;
-        } else {
-          return 0;
-        }
-      }
+    var square = function(x) {
+      return x * x;
     };
 
 CoffeeScript, on the other hand, is a Real Language and it **looks** like a Real Language:
 
-	  isAlive: (x, y) ->
-		liveNeighbors = 0
-		for dy in [-1 .. 1]
-		  for dx in [-1 .. 1]
-			neighborY = (y + dy + @sideLen) % @sideLen
-			neighborX = (x + dx + @sideLen) % @sideLen
-			if (dy isnt 0 or dx isnt 0) and @universe[neighborY][neighborX] is 1
-			  liveNeighbors++
-		if @universe[y][x] is 1
-		  if liveNeighbors < 2
-			0
-		  else if liveNeighbors is 2 or liveNeighbors is 3
-			1
-		  else
-			0
-		else
-		  if liveNeighbors is 3
-			1
-		  else
-			0
+	square = (x) -> x * x
 
 The readability alone, I think, should make one prefer CoffeeScript over JavaScript.
+
+> Unlike most programming languages, CoffeeScript was never designed from the ground up. It has always been an attempt to
+express core JavaScript concepts in as simple and minimal a syntax as we can find for them.
+
+> ---Jeremy Ashkenas, the author of CoffeeScript
 
 But, hey, looks aren't everything.
 
