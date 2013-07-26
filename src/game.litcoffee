@@ -6,7 +6,7 @@
       fps: 4
 
       init: ->
-        if not gfx.init()
+        unless gfx.init()
           alert "Sorry, no canvas"
           return
         gfx.load ->
@@ -20,12 +20,14 @@
         @dialog = null
         @screen = new TitleScreen()
         keys.reset()
-        if not @running
+        unless @running
             @start()
             @tick()
 
       tick: ->
-        return if not @running
+<a id="conditionalModifier1"></a>An example of a conditional modifier:
+
+        return unless @running
         @update()
         @render()
         if (@screen? and @screen.constructor is TitleScreen) or @dialog?
@@ -46,4 +48,6 @@
       render: ->
         gfx.clear()
         @screen.render gfx
+<a id="conditionalModifier1"></a>An example of a conditional modifier:
+
         @dialog.render gfx if @dialog

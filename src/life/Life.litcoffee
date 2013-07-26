@@ -20,6 +20,8 @@
         @universe = twistedNextGen
 
       twist: (newGen) ->
+<a id="listComprehension"></a>An example of list comprehension:
+
           twisted = (
             for i in [-@radius .. @radius]
               for j in [-@radius .. @radius]
