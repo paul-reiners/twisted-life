@@ -20,7 +20,7 @@ appFiles  = [
   'game'
 ]
 
-task 'build', 'Build single application file from source files', ->
+build = (callback) ->
   appContents = new Array remaining = appFiles.length
   for file, index in appFiles then do (file, index) ->
     fs.readFile "src/#{file}.litcoffee", 'utf8', (err, fileContents) ->
@@ -36,3 +36,6 @@ task 'build', 'Build single application file from source files', ->
         fs.unlink 'script/main.coffee', (err) ->
           throw err if err
           console.log 'Done.'
+
+task 'build', 'Build single application file from source files', ->
+  build()
