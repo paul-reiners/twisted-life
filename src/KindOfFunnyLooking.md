@@ -1,6 +1,9 @@
+<link href="docscss" rel="stylesheet"></link>
+
 Kind of Funny Looking
 =====================
-Steve Buscemi, JavaScript, and CoffeeScript
+<!-- width="225" height="39" -->
+Steve Buscemi, JavaScript, and <a id="logo" href="#top"><img src="./img/logo.png" width="169" height="29" alt="CoffeeScript" /></a>
 -------------------------------------------
 
 Version 0.0.1 - Thu 18 Jul 2013
