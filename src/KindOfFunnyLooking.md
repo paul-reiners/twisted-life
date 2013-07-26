@@ -30,20 +30,59 @@ is "Lisp in C's clothing":
 
 However, like Steve Buscemi, JavaScript is kind of funny looking.
 
-    var square = function(x) {
-      return x * x;
-    };
+    var MyClass = (function() {
+      function MyClass() {
+        alert('constructor');
+      }
+
+      MyClass.prototype.doSomething = function() {
+        alert('doing something');
+      };
+
+      return MyClass;
+    })();
+
+    c = new MyClass();
+    c.doSomething();
 
 CoffeeScript, on the other hand, is a Real Language and it **looks** like a Real Language:
 
-	square = (x) -> x * x
+	class MyClass
+      constructor: ->
+        alert 'constructor'
+
+      doSomething: ->
+        alert 'doing something'
+
+    c = new MyClass()
+    c.doSomething()
+
+(The two examples above are taken from
+["Should You Learn CoffeeScript?"](http://net.tutsplus.com/articles/interviews/should-you-learn-coffeescript/) by
+Jeffrey Way.)
 
 The readability alone, I think, should make one prefer CoffeeScript over JavaScript.
 
-> Unlike most programming languages, CoffeeScript was never designed from the ground up. It has always been an attempt to
-express core JavaScript concepts in as simple and minimal a syntax as we can find for them.
+> The core idea with CoffeeScript is to express JavaScript semantics in as readable and minimal a syntax as we can find.
 
 > ---Jeremy Ashkenas, the author of CoffeeScript
+
+> That JS and CoffeeScript are formally co-expressive — have the same semantics — is huge. Yes, this means you could
+have just written JS. But productivity and **beauty** (in the eyes of some beholders) matter; syntax matters.
+
+> ---Brendan Eich, the creator of JavaScript, and co-founder of Mozilla.
+
+> It doesn’t take much effort to learn; CoffeeScript is basically the sum of a few dozen syntactic sugars on top of
+JavaScript. And the reward is that you get to write more **beautiful** code, when you want it.
+
+> ---Trevor Burnham, author of <i>CoffeeScript: Accelerated JavaScript Development</i>
+
+> Of course it’s possible to write ugly code in any language, but I definitely think CoffeeScript has an inherent
+aesthetic **beauty** to it, in both the language and the community; much more so than traditional JavaScript.
+
+> ---Alex MacCaw, Ruby/JavaScript developer at Twitter, O’Reilly author
+
+[More slavering over CoffeeScript.](https://www.google.com/search?q=beauty+coffeescript&oq=beauty+coffeescript)
 
 But, hey, looks aren't everything.
 
@@ -63,6 +102,8 @@ by Caike Souza.
  * [Example 2](./game.html#conditionalModifier2)
 7. [The class keyword](./life/Life.html#classKeyword)
 
+Actually, *all* of those contribute to CoffeeScript's good looks.
+
 One last shallow observation on the shallowness (or 'shallowness'?) of good looks
 ---------------------------------------------------------------------------------
 
@@ -78,3 +119,4 @@ References
 * <i>Jump Start CoffeeScript </i>by Earle Castledine
 * <i>The Little Book on CoffeeScript </i> by Alex MacCaw
 * [DotJS. Symbiotic Languages](http://ashkenas.com/dotjs/)
+* ["Should You Learn CoffeeScript?"](http://net.tutsplus.com/articles/interviews/should-you-learn-coffeescript/) by Jeffrey Way
