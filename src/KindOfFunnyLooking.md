@@ -113,6 +113,15 @@ in Markdown files.
 
 What other language do you know of that lets you [display a picture of Brigitte Bardot inline](./game.html#brigitte)?
 
+Demo
+----
+
+* [Play](http://www.automatous-monk.com/twistedlife/)
+* Source
+  * [Life](./life/Life.html)
+  * [TwistedLife](./life/TwistedLife.html)
+
+
 References
 ----------
 

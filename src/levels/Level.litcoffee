@@ -9,7 +9,9 @@
 
       check: ->
         result = @checkForWin @game.player, @goal
-        unless result
+        if result
+          @game.player.render(gfx)
+        else
           result = @checkCollision @game.player, @life
         result
 

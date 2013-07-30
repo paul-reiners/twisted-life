@@ -1,5 +1,5 @@
-Life class
-==========
+Life.litcoffee
+==============
 <link href="../docs.css" rel="stylesheet"></link>
 ![John Horton Conway](../img/250px-John_H_Conway_2005.jpg)
 
@@ -9,6 +9,8 @@ John Horton Conway, inventor of Life
 
 A single Gosper's Glider Gun creating "gliders"
 
+Life class
+==========
 <a id="classKeyword"></a>An example of using the class keyword:
 
     class Life
