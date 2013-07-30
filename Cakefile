@@ -20,7 +20,7 @@ appFiles  = [
   'game'
 ]
 
-build = (callback) ->
+build = () ->
   appContents = new Array remaining = appFiles.length
   for file, index in appFiles then do (file, index) ->
     fs.readFile "src/#{file}.litcoffee", 'utf8', (err, fileContents) ->
@@ -39,3 +39,15 @@ build = (callback) ->
 
 task 'build', 'Build single application file from source files', ->
   build()
+
+genHTML = () ->
+  markdown = exec 'perl ./vendor/Markdown.pl --html4tags ./src/KindOfFunnyLooking.md > ./doc/KindOfFunnyLooking.html'
+  markdown.stderr.on 'data', (data) ->
+    process.stderr.write data.toString()
+  markdown.stdout.on 'data', (data) ->
+    print data.toString()
+  markdown.on 'exit', (code) ->
+    callback?() if code is 0
+
+task 'gen-html', 'Generate HTML from source files', ->
+  genHTML()
