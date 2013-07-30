@@ -119,4 +119,3 @@ References
 * ["Should You Learn CoffeeScript?"](http://net.tutsplus.com/articles/interviews/should-you-learn-coffeescript/) by Jeffrey Way
 * <i>Jump Start CoffeeScript </i>by Earle Castledine
 * <i>The Little Book on CoffeeScript </i> by Alex MacCaw
-* [DotJS. Symbiotic Languages](http://ashkenas.com/dotjs/)
