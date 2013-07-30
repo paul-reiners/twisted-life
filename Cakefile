@@ -14,6 +14,7 @@ appFiles  = [
   'screens/GameScreen'
   'screens/TitleScreen'
   'life/Life'
+  'life/TwistedLife'
   'player/Player'
   'goal/Goal'
   'levels/Level'
@@ -40,8 +41,8 @@ build = () ->
 task 'build', 'Build single application file from source files', ->
   build()
 
-genHTML = () ->
-  markdown = exec 'perl ./vendor/Markdown.pl --html4tags ./src/KindOfFunnyLooking.md > ./doc/KindOfFunnyLooking.html'
+genHTML = (src, dest) ->
+  markdown = exec 'perl ./vendor/Markdown.pl --html4tags ' + src + ' > ' + dest
   markdown.stderr.on 'data', (data) ->
     process.stderr.write data.toString()
   markdown.stdout.on 'data', (data) ->
@@ -50,4 +51,6 @@ genHTML = () ->
     callback?() if code is 0
 
 task 'gen-html', 'Generate HTML from source files', ->
-  genHTML()
+  genHTML('./src/KindOfFunnyLooking.md', './doc/KindOfFunnyLooking.html')
+  for file in appFiles
+    genHTML("src/#{file}.litcoffee", "doc/#{file}.html")

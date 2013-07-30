@@ -34,7 +34,7 @@
         @goal.render gfx
 
       createUniverse: ->
-        @life = new Life @game.radius, @game.size, @density
+        @life = new TwistedLife @game.radius, @game.size, @density
         center = @game.radius + 1
         @goal = new Goal center, center, @game.size
 

@@ -96,7 +96,7 @@ by Caike Souza.
 
 1. Cleaner syntax (okay, this is its good looks---make that 4)
 4. [String interpolation](./dialogs/LevelDialog.html#stringInterpolation)
-5. [List comprehensions](./life/Life.html#listComprehension)
+5. [List comprehensions](./life/TwistedLife.html#listComprehension)
 6. Conditional modifiers
  * [Example 1](./game.html#conditionalModifier1)
  * [Example 2](./game.html#conditionalModifier2)
@@ -108,7 +108,8 @@ One last shallow observation on the shallowness (or 'shallowness'?) of good look
 ---------------------------------------------------------------------------------
 
 This whole presentation is executable CoffeeScript.  You see, CoffeeScript allows
-literate programming by embedding your code in Markdown files.
+literate programming (but not in the sense of Knuth, so try not to get all worked up about that) by embedding your code
+in Markdown files.
 
 What other language do you know of that lets you [display a picture of Brigitte Bardot inline](./game.html#brigitte)?
 

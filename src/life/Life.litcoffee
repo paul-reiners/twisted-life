@@ -1,9 +1,20 @@
+Life class
+==========
 <link href="../docs.css" rel="stylesheet"></link>
 ![John Horton Conway](../img/250px-John_H_Conway_2005.jpg)
+
+John Horton Conway, inventor of Life
+
+![John Horton Conway](../img/Gospers_glider_gun.gif)
+
+A single Gosper's Glider Gun creating "gliders"
 
 <a id="classKeyword"></a>An example of using the class keyword:
 
     class Life
+Constructor
+-----------
+
       constructor: (@radius, @size, density) ->
         # Random universe
         diameter = 2 * @radius + 1
@@ -19,42 +30,8 @@
                 0)
         @sideLen = @universe.length
 
-      update: ->
-        nextGen = @getNextGen()
-        twistedNextGen = @twist(nextGen)
-        @universe = twistedNextGen
-
-      twist: (newGen) ->
-<a id="listComprehension"></a>An example of list comprehension:
-
-          twisted = (
-            for i in [-@radius .. @radius]
-              for j in [-@radius .. @radius]
-                  absI = Math.abs i
-                  absJ = Math.abs j
-                  dist = Math.max absI, absJ
-                  iOffSet = 0
-                  jOffSet = 0
-                  if i is 0 and j is 0
-                    iOffSet = 0
-                    jOffSet = 0
-                  else if dist is absI and i < 0 and not (i is -@radius and j is -@radius)
-                      iOffSet =  0
-                      jOffSet = -1
-                  else if dist is absJ and j > 0
-                      iOffSet = -1
-                      jOffSet =  0
-                  else if dist is absI and i > 0
-                      iOffSet = 0
-                      jOffSet = 1
-                  else
-                    iOffSet = 1
-                    jOffSet = 0
-                  x = ((i + @radius + iOffSet) + @sideLen) % @sideLen
-                  y = ((j + @radius + jOffSet) + @sideLen) % @sideLen
-                  newGen[x][y])
-
-          twisted
+getNextGen function
+-------------------
 
       getNextGen: ->
         nextGen = (
@@ -63,13 +40,8 @@
               @isAlive x, y)
         nextGen
 
-      render: (gfx) ->
-        for y in [0 ... @sideLen]
-          for x in [0 ... @sideLen]
-            if @universe[y][x] is 1
-              gfx.drawSquare(y, x, @size)
-            else
-              gfx.drawSquare(y, x, @size, "black")
+isAlive function
+----------------
 
       isAlive: (x, y) ->
         liveNeighbors = 0
@@ -80,21 +52,28 @@
             if (dy isnt 0 or dx isnt 0) and @universe[neighborY][neighborX] is 1
               liveNeighbors++
         if @universe[y][x] is 1
-          # Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+
           if liveNeighbors < 2
             0
-          # Any live cell with two or three live neighbours lives on to the next generation.
+Any live cell with two or three live neighbours lives on to the next generation.
+
           else if liveNeighbors is 2 or liveNeighbors is 3
             1
-          # Any live cell with more than three live neighbours dies, as if by overcrowding.
+Any live cell with more than three live neighbours dies, as if by overcrowding.
+
           else
             0
         else
-          # Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+
           if liveNeighbors is 3
             1
           else
             0
+
+getRandomDeadCell function
+--------------------------
 
       getRandomDeadCell: ->
         c = @count
