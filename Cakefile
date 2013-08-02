@@ -24,7 +24,7 @@ appFiles  = [
 build = () ->
   appContents = new Array remaining = appFiles.length
   for file, index in appFiles then do (file, index) ->
-    fs.readFile "src/#{file}.litcoffee", 'utf8', (err, fileContents) ->
+    fs.readFile "src/#{file}.coffee.md", 'utf8', (err, fileContents) ->
       throw err if err
       appContents[index] = fileContents
       process() if --remaining is 0
@@ -53,4 +53,4 @@ genHTML = (src, dest) ->
 task 'gen-html', 'Generate HTML from source files', ->
   genHTML('./src/KindOfFunnyLooking.md', './doc/KindOfFunnyLooking.html')
   for file in appFiles
-    genHTML("src/#{file}.litcoffee", "doc/#{file}.html")
+    genHTML("src/#{file}.coffee.md", "doc/#{file}.html")
