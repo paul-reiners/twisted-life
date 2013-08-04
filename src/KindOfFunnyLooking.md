@@ -80,7 +80,7 @@ JavaScript. And the reward is that you get to write more **beautiful** code, whe
 > Of course it’s possible to write ugly code in any language, but I definitely think CoffeeScript has an inherent
 aesthetic **beauty** to it, in both the language and the community; much more so than traditional JavaScript.
 
-> ---Alex MacCaw, Ruby/JavaScript developer at Twitter, O’Reilly author
+> ---Alex MacCaw, Ruby/JavaScript developer at Twitter, O'Reilly author
 
 [More slavering over CoffeeScript.](https://www.google.com/search?q=beauty+coffeescript&oq=beauty+coffeescript)
 
@@ -111,7 +111,7 @@ This whole presentation is executable CoffeeScript.  You see, CoffeeScript allow
 literate programming (but not in the sense of Knuth, so try not to get all worked up about that) by embedding your code
 in Markdown files.
 
-What other language do you know of that lets you [display a picture of Brigitte Bardot inline](./game.html#brigitte)?
+What other language do you know of that lets you [display a picture of Brigitte Bardot inline](./life/TwistedLife.html#brigitte)?
 
 Demo
 ----
@@ -126,6 +126,8 @@ References
 ----------
 
 * [CoffeeScript](http://coffeescript.org/)
+*  ["JavaScript: The World's Most Misunderstood Programming Language"](http://javascript.crockford.com/javascript) by Douglas Crockford
 * ["Should You Learn CoffeeScript?"](http://net.tutsplus.com/articles/interviews/should-you-learn-coffeescript/) by Jeffrey Way
 * <i>Jump Start CoffeeScript </i>by Earle Castledine
 * <i>The Little Book on CoffeeScript </i> by Alex MacCaw
+* <i>CoffeeScript: Accelerated JavaScript Development </i> by Trevor Burnham

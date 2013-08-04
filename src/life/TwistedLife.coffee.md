@@ -1,6 +1,14 @@
+TwistedLife.coffee.md
+=====================
+<link href="../docs.css" rel="stylesheet"></link>
+
+<a id="brigitte"></a>
+![Brigitte Bardot](../img/brigitte.jpg)
+
+Brigitte Bardot, French actress and animal rights activist
+
 TwistedLife class
 =================
-<link href="../docs.css" rel="stylesheet"></link>
 
     class TwistedLife extends Life
 update function

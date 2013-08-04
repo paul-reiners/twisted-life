@@ -1,6 +1,7 @@
+game.coffee.md
+==============
+
 <link href="docs.css" rel="stylesheet"></link>
-<a id="brigitte"></a>
-![Brigitte Bardot](./img/brigitte.jpg)
 
     "use strict"
 
