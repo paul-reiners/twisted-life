@@ -13,3 +13,4 @@ doc/sound.html
 npm-debug.log
 script/
 twisted-life-module.iml
+doc/.DS_Store
