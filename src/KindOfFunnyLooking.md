@@ -118,6 +118,8 @@ Demo
 
 * [Play](http://www.automatous-monk.com/twistedlife/)
 * Source
+  * [game](game.html)
+  * [GameScreen](./screens/GameScreen.html)
   * [Life](./life/Life.html)
   * [TwistedLife](./life/TwistedLife.html)
 

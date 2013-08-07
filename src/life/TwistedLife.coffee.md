@@ -25,34 +25,31 @@ twist function
       twist: (newGen) ->
 <a id="listComprehension"></a>An example of list comprehension:
 
-          twisted = (
-            for i in [-@radius .. @radius]
-              for j in [-@radius .. @radius]
-                  absI = Math.abs i
-                  absJ = Math.abs j
-                  dist = Math.max absI, absJ
+          for i in [-@radius .. @radius]
+            for j in [-@radius .. @radius]
+                absI = Math.abs i
+                absJ = Math.abs j
+                dist = Math.max absI, absJ
+                iOffSet = 0
+                jOffSet = 0
+                if i is 0 and j is 0
                   iOffSet = 0
                   jOffSet = 0
-                  if i is 0 and j is 0
+                else if dist is absI and i < 0 and not (i is -@radius and j is -@radius)
+                    iOffSet =  0
+                    jOffSet = -1
+                else if dist is absJ and j > 0
+                    iOffSet = -1
+                    jOffSet =  0
+                else if dist is absI and i > 0
                     iOffSet = 0
-                    jOffSet = 0
-                  else if dist is absI and i < 0 and not (i is -@radius and j is -@radius)
-                      iOffSet =  0
-                      jOffSet = -1
-                  else if dist is absJ and j > 0
-                      iOffSet = -1
-                      jOffSet =  0
-                  else if dist is absI and i > 0
-                      iOffSet = 0
-                      jOffSet = 1
-                  else
-                    iOffSet = 1
-                    jOffSet = 0
-                  x = ((i + @radius + iOffSet) + @sideLen) % @sideLen
-                  y = ((j + @radius + jOffSet) + @sideLen) % @sideLen
-                  newGen[x][y])
-
-          twisted
+                    jOffSet = 1
+                else
+                  iOffSet = 1
+                  jOffSet = 0
+                x = ((i + @radius + iOffSet) + @sideLen) % @sideLen
+                y = ((j + @radius + jOffSet) + @sideLen) % @sideLen
+                newGen[x][y]
 
 render function
 ---------------

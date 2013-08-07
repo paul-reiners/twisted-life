@@ -21,7 +21,7 @@ Constructor
         # Random universe
         diameter = 2 * @radius + 1
         @count = 0
-        @universe = (
+        @universe =
           for [0 ... diameter]
             for [0 ... diameter]
               r = Math.random()
@@ -29,18 +29,16 @@ Constructor
                 @count++
                 1
               else
-                0)
+                0
         @sideLen = @universe.length
 
 getNextGen function
 -------------------
 
       getNextGen: ->
-        nextGen = (
-          for y in [0 ... @sideLen]
-            for x in [0 ... @sideLen]
-              @isAlive x, y)
-        nextGen
+        for y in [0 ... @sideLen]
+          for x in [0 ... @sideLen]
+            @isAlive x, y
 
 isAlive function
 ----------------

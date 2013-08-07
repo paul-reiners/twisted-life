@@ -1,3 +1,7 @@
+GameScreen.coffee.md
+==============
+<link href="../docs.css" rel="stylesheet"></link>
+
     class GameScreen extends Screen
       this.DECAY = 0.99
       this.STARTING_DENSITY = 0.125
