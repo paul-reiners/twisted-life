@@ -6,16 +6,55 @@ debug(diameter);
 var n_rows = diameter;
 var n_cols = diameter;
 var universe = [];
+var count = 0;
 for (var y = 0; y <= n_rows; y++) {
     universe[y] = [];
     for (var x = 0; x <= n_cols; x++) {
         if (random(0, 2) < 1) {
             universe[y][x] = 1;
+            count += 1;
         } else {
             universe[y][x] = 0;
         }
     }
 }
+
+var utils = {
+  rand:  function(max) {
+    return floor(random(0, 1) * max);
+  }
+};
+
+var getRandomDeadCell = function() {
+    var c = count;
+    var foundDeadCell = false;
+    var playerX = -1;
+    var playerY = -1;
+    for (var y = 0; y < universe.length; y++) {
+      for (var x = 0; x < universe[y].length; x++) {
+        if (universe[y][x] === 0) {
+          var r = utils.rand(c);
+          if (r === 0) {
+            playerY = y;
+            playerX = x;
+            foundDeadCell = true;
+            break;
+          } else {
+            c--;
+          }
+        }
+      if (foundDeadCell) {
+        break;
+      }
+      }
+    }
+    
+    return [playerX, playerY];
+};
+
+var randomDeadCell = getRandomDeadCell();
+var playerX = randomDeadCell[0];
+var playerY = randomDeadCell[1];
 
 var isAlive = function (x, y) {
     var liveNeighbors = 0;
@@ -52,6 +91,7 @@ var isAlive = function (x, y) {
 };
 
 var getNextGen = function() {
+    count = 0;
     var new_universe = [];
     for (var y = 0; y < n_rows; y++) {
         new_universe[y] = [];
@@ -62,6 +102,7 @@ var getNextGen = function() {
     for (var y = 0; y < n_rows; y++) {
       for (var x = 0; x < n_cols; x++) {
         universe[y][x] = new_universe[y][x];
+        count += universe[y][x];
       }
     }
 };
@@ -103,6 +144,52 @@ var twist = function(radius, sideLen) {
   return twisted;
 };
 
+var twistNextGen = function() {
+    var twistedNextGen = twist(20, 40);
+    for (var y = 0; y < n_rows; y++) {
+      for (var x = 0; x < n_cols; x++) {
+        universe[y][x] = twistedNextGen[y][x];
+      }
+    }
+};
+
+var keys = {
+  up: false,
+  down: false,
+  left: false,
+  right: false,
+  space: false,
+
+  reset: function() {
+    keys.up = keys.down = keys.left = keys.right = keys.space = false;
+  },
+
+  trigger: function(keyCode, isDown) {
+    switch (keyCode) {
+      case 37: 
+          keys.left = isDown;
+          break;
+      case 39: 
+          keys.right = isDown;
+          break;
+      case 38: 
+          keys.up = isDown;
+          break;
+      case 40: 
+          keys.down = isDown;
+          break;
+      case 32: 
+          keys.space = isDown;
+          break;
+    }
+  },
+
+  start: function() {
+    return keys.left || keys.right || keys.up || keys.down;
+  }
+};
+
+
 draw = function() {
     background(255, 255, 255);
     
@@ -115,11 +202,14 @@ draw = function() {
             }
         }
     }
+    
+    fill(0, 255, 0);
+    var center = radius * unit + unit / 2;
+    rect(center, center, unit, unit);
+    
+    fill(0, 0, 255);
+    rect(playerX * unit + unit / 2, playerY * unit + unit / 2, unit, unit);
+    
     getNextGen();
-    var twistedNextGen = twist(20, 40);
-    for (var y = 0; y < n_rows; y++) {
-      for (var x = 0; x < n_cols; x++) {
-        universe[y][x] = twistedNextGen[y][x];
-      }
-    }
+    twistNextGen();
 };
